@@ -1,0 +1,6 @@
+---
+
+roles:
+- name: role-ansible-builtin-copy
+  src: https://github.com/IamSureshRa/role-ansible-builtin-copy
+  version: main

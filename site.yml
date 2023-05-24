@@ -1,0 +1,9 @@
+---
+
+- name: Ansible Playbook Unix - Examples
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+  - name: Example from an Ansible Playbook
+    ansible.builtin.ping:
