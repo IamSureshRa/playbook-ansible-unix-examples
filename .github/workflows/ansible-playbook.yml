@@ -1,0 +1,32 @@
+---
+
+name: Ansible Playbook Workflow
+
+on:
+  workflow_dispatch:
+
+    inputs:
+      name:
+        default: 'site.yml'
+        description: 'Select Playbook'
+        options:
+          - site.yml
+          - mergelistdict.yml
+        required: true
+        type: choice
+
+jobs:
+
+  run_playbook:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Ansible Version
+      run: ansible --version
+
+    - name: Playbook ${{ github.event.inputs.name }}
+      run: ansible-playbook ${{ github.event.inputs.name }}
